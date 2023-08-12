@@ -55,7 +55,7 @@ const submit = (note) => {
                     Notes
                 </h2>
                 <Link :href="route('notes.create')">
-                    Crear nueva nota
+                    Create new note
                 </Link>
             </div>
         </template>
@@ -63,7 +63,7 @@ const submit = (note) => {
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white shadow-xl sm:rounded-lg flex flex-col py-6 px-3 mb-3">
-                    <input id="search" type="text" v-model="query" placeholder="Buscar"
+                    <input id="search" type="text" v-model="query" placeholder="Search"
                     class="rounded-md text-sm border-gray-300 placeholder:opacity-60" autocomplete="off">
                     <!-- <form @submit.prevent="search">
                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Buscar</label>
@@ -81,15 +81,15 @@ const submit = (note) => {
                         <div class="w-full h-auto rounded-lg shadow-xl p-6">
                             <h3 class="pb-4"> {{ note.excerpt }} </h3>
                             <div class="mt-3 flex space-x-3">
-                                <Link class="bg-blue-600 text-white rounded-lg p-3 hover:bg-blue-500" :href="route('notes.show', note.id)">
-                                    Ver nota completa
+                                <Link class="bg-blue-600 text-white rounded-lg p-3 hover:bg-blue-500 font-semibold text-xs uppercase" :href="route('notes.show', note.id)">
+                                    Note
                                 </Link>
-                                <Link class="bg-yellow-600 text-white rounded-lg p-3 hover:bg-yellow-500" :href="route('notes.edit', note.id)">
-                                    Editar registro
+                                <Link class="bg-yellow-600 text-white rounded-lg p-3 hover:bg-yellow-500 font-semibold text-xs uppercase" :href="route('notes.edit', note.id)">
+                                    Edit
                                 </Link>
                                 <DangerButton @click="submit(note.id)"
                                     class="ml-3">
-                                    Eliminar
+                                    Delete
                                 </DangerButton>
                             </div>
                         </div>
